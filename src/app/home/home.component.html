@@ -1,15 +1,12 @@
-
 <div class="courses-panel">
-
     <h3>All Brands</h3>
-        <mat-card class="mat-elevation">
-        	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home']">All</button>
-        </mat-card>
-        <mat-card *ngFor="let brand of carBrands$ | async" class="mat-elevation">
-        	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home', brand.id]">{{brand.name}}.</button>
-        </mat-card>
-        <br><br><br><br><br>
-        <app-car-list [cars]="cars$ | async"></app-car-list>
-
+    <mat-card class="mat-elevation">
+    	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home']">All</button>
+    </mat-card>
+    <mat-card *ngFor="let brand of carBrands$ | async" class="mat-elevation">
+    	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home', brand.id]">{{brand.name}}.</button>
+    </mat-card>
+    <br><br><br><br><br>
+    <app-car-list [cars]="cars$ | async"></app-car-list>
 </div>
 

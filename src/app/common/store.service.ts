@@ -25,7 +25,7 @@ export class Store {
   	        map(res => Object.values(res))
   	    )
   	    .subscribe(
-  	        brands => { this.subject.next(brands); console.log(brands); }
+  	        brands => { this.subject.next(brands); }
   	    );
   }
 

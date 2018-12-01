@@ -15,26 +15,26 @@ import {Store} from '../common/store.service';
 export class HomeComponent implements OnInit {
 
   carBrands$: Observable<Brands[]>;
-  @Input()
+
   cars$: Observable<Cars[]>;
 
   constructor( private router: Router, private route: ActivatedRoute, private store:Store) {}
 
   ngOnInit() {
 
-  	this.carBrands$ = this.store.brands$;
+    this.carBrands$ = this.store.brands$;
 
-	this.route.params.subscribe(routeParams => {
+  	this.route.params.subscribe(routeParams => {
 
-		this.cars$ = this.loadCars().pipe(
-			map(result => {  
-				return result
-					.filter(car => routeParams.id ? car.brandId == routeParams.id : car );
-				}
-			)
-		);
-		this.cars$.subscribe();
-	});
+  		this.cars$ = this.loadCars().pipe(
+  			map(result => {  
+  				return result
+  					.filter(car => routeParams.id ? car.brandId == routeParams.id : car );
+  				}
+  			)
+  		);
+  		this.cars$.subscribe();
+  	});
   }
 
   loadCars(): Observable<Cars[]> {
