@@ -1,12 +1,25 @@
 <div class="courses-panel">
-    <h3>All Brands</h3>
-    <mat-card class="mat-elevation">
-    	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home']">All</button>
-    </mat-card>
-    <mat-card *ngFor="let brand of carBrands$ | async" class="mat-elevation">
-    	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home', brand.id]">{{brand.name}}.</button>
-    </mat-card>
-    <br><br><br><br><br>
+    <h3>Brands</h3>
+	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home']">All</button>\
+
+	<button *ngFor="let brand of carBrands$ | async" mat-button class="mat-raised-button mat-primary" [routerLink]="['/home', brand.id]">{{brand.name}}.</button>
+    
+    <br><br><br>
+    <h3>Cars</h3>
     <app-car-list [cars]="cars$ | async"></app-car-list>
+    <br>
+    <h3>Summary</h3>
+    <hr>
+    <p>
+    	Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    </p>
+    <ul>
+        <li> Built with Material Design</li>
+        <li> Two Components (Brands, Cars)</li>
+        <li> One service (get brands and cars data from Web API)</li>
+        <li> RxJS (map, filter) subscribes on app load (brand) and router change</li>
+        <li> Observer utility copied from Angular.io University</li>
+
+    </ul>
 </div>
 
