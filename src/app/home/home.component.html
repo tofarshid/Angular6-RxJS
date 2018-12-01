@@ -2,19 +2,14 @@
 <div class="courses-panel">
 
     <h3>All Brands</h3>
-        <mat-card class="mat-elevation-z10">
+        <mat-card class="mat-elevation">
         	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home']">All</button>
         </mat-card>
-        <mat-card *ngFor="let brand of carBrands$ | async" class="mat-elevation-z10">
+        <mat-card *ngFor="let brand of carBrands$ | async" class="mat-elevation">
         	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home', brand.id]">{{brand.name}}.</button>
         </mat-card>
-        <br>
-        <span>Search Title:</span>
-        <br>
-        <input #search>
-        <br><br>
-        <mat-card *ngFor="let cars of cars$ | async" class="mat-elevation-z10">
-        	{{cars.title}}
-        </mat-card>
+        <br><br><br><br><br>
+        <app-car-list [cars]="cars$ | async"></app-car-list>
+
 </div>
 

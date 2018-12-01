@@ -19,7 +19,8 @@ import {
     MatInputModule, MatListModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule, MatSidenavModule,
     MatSortModule,
     MatTableModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatGridListModule
 } from "@angular/material";
 import {HttpClientModule} from "@angular/common/http";
 // course dialogue
@@ -59,7 +60,8 @@ import { CarListComponent } from './car-list/car-list.component';
         AppRoutingModule,
         MatSelectModule,
         MatDatepickerModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent],

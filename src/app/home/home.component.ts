@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Brands, Cars } from '../model/brand';
 import {Router, ActivatedRoute, NavigationEnd} from "@angular/router";
 import {interval, noop, Observable, of, throwError, timer} from 'rxjs';
@@ -15,7 +15,7 @@ import {Store} from '../common/store.service';
 export class HomeComponent implements OnInit {
 
   carBrands$: Observable<Brands[]>;
-
+  @Input()
   cars$: Observable<Cars[]>;
 
   constructor( private router: Router, private route: ActivatedRoute, private store:Store) {}
