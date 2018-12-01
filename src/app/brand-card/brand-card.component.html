@@ -1,0 +1,3 @@
+<mat-card *ngFor="let brand of brands" class="mat-elevation-z10">
+	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home', brand.id]">{{brand.name}}</button>
+</mat-card>

@@ -1,3 +1,17 @@
-<p>
-  home works!
-</p>
+
+<div class="courses-panel">
+
+    <h3>All Brands</h3>
+    <div *ngFor="let brand of getBrands$ | async">
+    	
+
+    </div>
+	<div >
+            <app-brand-card [brands] = "getBrands$ | async">
+                    
+
+            </app-brand-card>
+     </div>
+</div>
+<app-car-list></app-car-list>
+
