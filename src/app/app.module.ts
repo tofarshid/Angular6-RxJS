@@ -29,7 +29,6 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { LayoutModule } from '@angular/cdk/layout';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { BrandCardComponent } from './brand-card/brand-card.component';
 import { CarListComponent } from './car-list/car-list.component';
 
 
@@ -37,7 +36,6 @@ import { CarListComponent } from './car-list/car-list.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    BrandCardComponent,
     CarListComponent
   ],
   imports: [

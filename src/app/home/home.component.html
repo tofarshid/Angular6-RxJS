@@ -2,16 +2,14 @@
 <div class="courses-panel">
 
     <h3>All Brands</h3>
-    <div *ngFor="let brand of getBrands$ | async">
-    	
-
-    </div>
 	<div >
-            <app-brand-card [brands] = "getBrands$ | async">
-                    
+        <mat-card *ngFor="let brand of getBrands$ | async" class="mat-elevation-z10">
+        	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/home', brand.id]">{{brand.name}}.</button>
+        </mat-card>
+        List cars for current brands
+        {{currentBrandId}}
 
-            </app-brand-card>
+
      </div>
 </div>
-<app-car-list></app-car-list>
 
