@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Brands } from '../model/brand';
+import { Brands, Cars } from '../model/brand';
 import {Router, ActivatedRoute, NavigationEnd} from "@angular/router";
 import {interval, noop, Observable, of, throwError, timer} from 'rxjs';
-import {catchError, delay, delayWhen, finalize, map, retryWhen, shareReplay, tap} from 'rxjs/operators';
+import {catchError, delay, delayWhen, finalize, map, retryWhen, shareReplay, tap, find, filter} from 'rxjs/operators';
 import {createHttpObservable} from '../common/util';
 import {Store} from '../common/store.service';
 
@@ -14,18 +14,32 @@ import {Store} from '../common/store.service';
 })
 export class HomeComponent implements OnInit {
 
-  getBrands$: Observable<Brands[]>;
-  currentBrandId: number;
+  carBrands$: Observable<Brands[]>;
 
-  constructor( private router: Router, private route: ActivatedRoute, private store:Store) {
+  cars$: Observable<Cars[]>;
 
-	}
+  constructor( private router: Router, private route: ActivatedRoute, private store:Store) {}
 
   ngOnInit() {
-  	this.getBrands$ = this.store.brands$;
+
+  	this.carBrands$ = this.store.brands$;
+
 	this.route.params.subscribe(routeParams => {
-		console.log(routeParams.id);
-		this.currentBrandId = routeParams.id;
+
+		this.cars$ = this.loadCars().pipe(
+			map(result => {  
+				return result
+					.filter(car => routeParams.id ? car.brandId == routeParams.id : car );
+				}
+			)
+		);
+		this.cars$.subscribe();
 	});
   }
+
+  loadCars(): Observable<Cars[]> {
+
+  	return createHttpObservable(`http://localhost:4002/payload`);
+  }
+
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, timer } from 'rxjs';
 import { Course } from '../model/course';
-import { Brands } from '../model/brand';
+import { Brands, Cars } from '../model/brand';
 import { delayWhen, filter, map, retryWhen, shareReplay, tap, withLatestFrom } from 'rxjs/operators'; // some
 import { createHttpObservable } from './util';
 import { fromPromise } from 'rxjs/internal-compatibility'; // ?
@@ -12,7 +12,6 @@ import { fromPromise } from 'rxjs/internal-compatibility'; // ?
 export class Store {
 
   private subject = new BehaviorSubject<Brands[]>([]);
-
   brands$: Observable<Brands[]> = this.subject.asObservable();
 
   init () {
@@ -29,10 +28,6 @@ export class Store {
   	        brands => { this.subject.next(brands); console.log(brands); }
   	    );
   }
-
-
-
-
 
   constructor() { }
 }
