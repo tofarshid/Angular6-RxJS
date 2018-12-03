@@ -14,3 +14,7 @@
   max-width: 400px;
 }
 
+.mat-grid-list .mat-primary:hover {
+	background: #e1e1e1;
+	color: #222;
+}
