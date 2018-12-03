@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject, timer } from 'rxjs';
-import { Course } from '../model/course';
 import { Brands, Cars } from '../model/brand';
 import { delayWhen, filter, map, retryWhen, shareReplay, tap, withLatestFrom } from 'rxjs/operators'; // some
 import { createHttpObservable } from './util';
@@ -15,13 +14,13 @@ export class Store {
   brands$: Observable<Brands[]> = this.subject.asObservable();
 
   init () {
-  	// const url: string = 'http://simpleideas.com.au/book-data/course.json';
+    
   	const url: string = 'http://localhost:4001/payload'
   	const http$ = createHttpObservable(url);
 
   	http$
   	    .pipe(
-  	        tap(() => console.log('HTTP request executed')),
+  	        tap(() => console.log('HTTP')),
   	        map(res => Object.values(res))
   	    )
   	    .subscribe(

@@ -8,7 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { HomeComponent } from './home/home.component';
+
 // about
 import { MatTabsModule } from '@angular/material/tabs';
 // course
@@ -31,13 +31,14 @@ import { LayoutModule } from '@angular/cdk/layout';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CarListComponent } from './car-list/car-list.component';
+import { BrandComponent } from './brand/brand.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    CarListComponent
+    CarListComponent,
+    BrandComponent
   ],
   imports: [
     BrowserModule,

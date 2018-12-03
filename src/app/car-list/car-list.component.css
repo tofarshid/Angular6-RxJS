@@ -1,18 +1,14 @@
 .mat-grid-tile {
 	border: 1px solid #fff;
-
 }
-
 
 .mat-card-content {
 	background: pink;
 }
 
-
 .mat-card-footer {
 	background: red;
 }
-
 
 .example-card {
   max-width: 400px;

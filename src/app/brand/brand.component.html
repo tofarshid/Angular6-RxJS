@@ -1,0 +1,24 @@
+<div class="courses-panel">
+    <h3>Brands</h3>
+	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/brand']">All</button>
+
+	<button *ngFor="let brand of carBrands$ | async" mat-button class="mat-raised-button mat-primary" [routerLink]="['/brand', brand.id]">{{brand.name}}.</button>
+    
+    <br><br><br>
+    <h3>Cars</h3>
+    <app-car-list [cars]="cars$ | async"></app-car-list>
+    <br>
+    <h3>Summary</h3>
+    <hr>
+    <ul>
+        <li> Built in Material Design</li>
+        <li> Two Components (Brands, Cars)</li>
+        <li> One service (get brands and cars data from JSON API)</li>
+        <li> RxJS subscribes on app load (brand) and router change (car)</li>
+        <li><br></li>
+        <li>json-server --watch src/app/data/brand.json --port 4001</li>
+        <li>json-server --watch  src/app/data/cars.json --port 4002</li>
+        <li>Happy Coding (<i class="fa fa-gift" aria-hidden="true"></i>)</li>
+    </ul>
+</div>
+
