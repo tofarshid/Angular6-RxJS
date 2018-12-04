@@ -7,7 +7,7 @@ import { Store } from './common/store.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  title = 'GoogleMap';
+  title = 'ANGULAR 6 with RxJS';
   constructor(private store:Store) {
   }
   ngOnInit() {

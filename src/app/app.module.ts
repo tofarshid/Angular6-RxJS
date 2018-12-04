@@ -11,8 +11,7 @@ import { MatCardModule } from '@angular/material/card';
 
 // about
 import { MatTabsModule } from '@angular/material/tabs';
-// course
-// course list
+
 import {
     MatDatepickerModule,
     MatDialogModule,
@@ -22,10 +21,10 @@ import {
     MatToolbarModule,
     MatGridListModule
 } from "@angular/material";
+
 import {HttpClientModule} from "@angular/common/http";
-// course dialogue
+
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-// import {MatMomentDateModule} from "@angular/material-moment-adapter"; ???????
 
 import { LayoutModule } from '@angular/cdk/layout';
 
@@ -65,7 +64,17 @@ import { BrandComponent } from './brand/brand.component';
         MatGridListModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  // entryComponent: [CourseDialogComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+/*
+
+echo "# Angular6-RxJS" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/tofarshid/Angular6-RxJS.git
+git push -u origin master
+
+*/
