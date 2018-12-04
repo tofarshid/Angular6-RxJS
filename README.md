@@ -1,7 +1,8 @@
-# GoogleMap
+# Angular6 + RxJS
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
 
+![Image description](http://simpleideas.com.au/git-images/Angular6+RxJS.png)
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
