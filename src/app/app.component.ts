@@ -8,8 +8,9 @@ import { Store } from './common/store.service';
 })
 export class AppComponent implements OnInit{
   title = 'ANGULAR 6 with RxJS';
-  constructor(private store:Store) {
-  }
+
+  constructor(private store:Store) {}
+  
   ngOnInit() {
   	this.store.init();
   }
