@@ -1,4 +1,9 @@
 <div class="courses-panel">
+    <ul >
+        <li>(data)</li>
+        <li>json-server --watch src/app/data/brand.json --port 4001</li>
+        <li>json-server --watch  src/app/data/cars.json --port 4002</li>
+    </ul>
     <h3>Brands</h3>
 	<button mat-button class="mat-raised-button mat-primary" [routerLink]="['/brand']">All</button>
 
@@ -15,9 +20,6 @@
         <li> Two Components (Brands, Cars)</li>
         <li> One service (get brands and cars data from JSON API)</li>
         <li> RxJS subscribes on app load (brand) and router change (car)</li>
-        <li><br></li>
-        <li>json-server --watch src/app/data/brand.json --port 4001</li>
-        <li>json-server --watch  src/app/data/cars.json --port 4002</li>
         <li><br></li>
         <li>Happy Coding (<i class="fa fa-gift" aria-hidden="true"></i>)</li>
     </ul>
